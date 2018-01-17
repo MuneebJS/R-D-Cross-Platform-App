@@ -1,13 +1,10 @@
 var React = require('react');
-var ReactDOM = require('react-dom');
 var ons = require('onsenui');
 var Ons = require('react-onsenui');
 
 
-
-
 export default React.createClass({
-  getInitialState: function() {
+  getInitialState: function () {
     return {
       username: '',
       password: '',
@@ -30,9 +27,9 @@ export default React.createClass({
     );
   },
 
-  handleClick: function() {
-    console.log("jlkals")
-    if (this.state.username === 'bob' && this.state.password === 'secret') {
+  handleClick: function () {
+    if (this.state.username === 'john' && this.state.password === 'test') {
+      navigator.pushPage({ component: WeatherPage });
       ons.notification.alert('You are now signed in!');
     }
     else {
@@ -41,15 +38,15 @@ export default React.createClass({
   },
 
   handleUsernameChange(e) {
-    this.setState({username: e.target.value});
+    this.setState({ username: e.target.value });
   },
 
   handlePasswordChange(e) {
-    this.setState({password: e.target.value});
+    this.setState({ password: e.target.value });
   },
 
   handleVegetableChange(vegetable) {
-    this.setState({selectedVegetable: vegetable});
+    this.setState({ selectedVegetable: vegetable });
   },
 
   renderCheckboxRow(row) {
@@ -84,10 +81,10 @@ export default React.createClass({
     )
   },
 
-  render: function() {
+  render: function () {
     return (
       <Ons.Page renderToolbar={this.renderToolbar}>
-        <section style={{textAlign: 'center'}}>
+        <section style={{ textAlign: 'center' }}>
           <p>
             <Ons.SearchInput
               placeholder='Search' />
